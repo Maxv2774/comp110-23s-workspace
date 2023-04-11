@@ -1,14 +1,16 @@
-"""File to define River class"""
+"""File to define River class."""
 
 __author__ = "730605138"
 
-from bear import Bear
-from fish import Fish
+from exercises.ex09.fish import Fish
+from exercises.ex09.bear import Bear
+
 
 class River:
-    
-    def __init__(self, num_fish: int, num_bears:int):
-        """New River with num_fish Fish and num_bears Bears"""
+    """River class."""
+
+    def __init__(self, num_fish: int, num_bears: int):
+        """New River with num_fish Fish and num_bears Bears."""
         self.day: int = 0
         self.fish: list[Fish] = []
         self.bears: list[Bear] = []
@@ -32,7 +34,7 @@ class River:
         """Check hunger."""
         bears = []
         for i in self.bears:
-            if i.hunger_score > 0:
+            if i.hunger_score >= 0:
                 bears.append(i)
         self.num_bears = len(bears)
         self.bears = bears
@@ -43,10 +45,10 @@ class River:
         fish = []
         bear = []
         for x in self.fish:
-            if x.age <= 3:
+            if x.age < 4:
                 fish.append(x)
         for y in self.bears:
-            if y.age <= 5:
+            if y.age < 6:
                 bear.append(y)
         self.num_fish = len(fish)
         self.num_bears = len(bear)
@@ -78,9 +80,7 @@ class River:
     
     def view_river(self):
         """See whats in the river."""
-        print(f"~~~ Day: {self.day} ~~~")
-        print(f"Fish Population: {self.num_fish}")
-        print(f"Bear Population: {self.num_bears}")
+        print(f"~~~ Day {self.day}: ~~~ \nFish population: {self.num_fish}\nBear population: {self.num_bears}")
         return None
             
     def one_river_day(self):

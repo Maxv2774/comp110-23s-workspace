@@ -1,7 +1,10 @@
-"""File to define Fish class"""
+"""File to define Fish class."""
 _author__ = "730605138"
+
+
 class Fish:
-    
+    """Fish Class."""
+
     def __init__(self, age_in: int = 0):
         """Init method for fish!"""
         self.age = age_in
