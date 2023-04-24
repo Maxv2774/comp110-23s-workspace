@@ -2,8 +2,8 @@
 
 __author__ = "730605138"
 
-from exercises.ex09.fish import Fish
-from exercises.ex09.bear import Bear
+from fish import Fish
+from bear import Bear
 
 
 class River:
@@ -65,7 +65,7 @@ class River:
     def repopulate_fish(self):
         """Repopulate_fish yes."""
         x = ((self.num_fish // 2) * 4)
-        self.num_fish = self.num_fish + x
+        self.num_fish =+ x
         for i in range(x):
             self.fish.append(Fish())
         return None
